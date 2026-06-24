@@ -1,0 +1,276 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen';
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+}
+
+.header {
+  text-align: center;
+  color: white;
+  margin-bottom: 40px;
+  padding: 30px 0;
+}
+
+.header h1 {
+  font-size: 2.5em;
+  margin: 0;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 1.1em;
+  margin-top: 10px;
+  opacity: 0.9;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.input-section,
+.result-section {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.input-section h2,
+.result-section h2 {
+  margin-top: 0;
+  color: #333;
+  font-size: 1.5em;
+}
+
+.prompt-input {
+  width: 100%;
+  padding: 15px;
+  font-size: 1em;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-family: monospace;
+  resize: vertical;
+  transition: border-color 0.3s;
+}
+
+.prompt-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.compile-btn {
+  width: 100%;
+  padding: 15px 20px;
+  margin-top: 15px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.compile-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+}
+
+.compile-btn:disabled,
+.compile-btn.loading {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.result-section {
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.result-success {
+  border-left: 4px solid #10b981;
+}
+
+.result-error {
+  border-left: 4px solid #ef4444;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  font-size: 0.9em;
+}
+
+.status-badge.success {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.status-badge.error {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.info-block {
+  background: #f9fafb;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.info-block p {
+  margin: 8px 0;
+  font-size: 0.95em;
+}
+
+.metrics-block {
+  margin: 20px 0;
+}
+
+.metrics-block h3 {
+  margin-top: 0;
+  color: #666;
+  font-size: 1em;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.metric-card {
+  background: #f0f4ff;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid #e5e7ff;
+}
+
+.metric-card.highlight {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  grid-column: 1 / -1;
+}
+
+.metric-label {
+  margin: 0;
+  font-size: 0.85em;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+
+.metric-value {
+  margin: 5px 0 0 0;
+  font-size: 1.3em;
+  font-weight: 700;
+}
+
+.config-block {
+  margin: 20px 0;
+  position: relative;
+}
+
+.config-block h3 {
+  margin-top: 0;
+  color: #666;
+  font-size: 1em;
+}
+
+.copy-btn {
+  padding: 8px 12px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85em;
+  float: right;
+  margin-bottom: 10px;
+}
+
+.copy-btn:hover {
+  background: #764ba2;
+}
+
+.config-output {
+  background: #1e293b;
+  color: #10b981;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 0.8em;
+  overflow-x: auto;
+  max-height: 200px;
+  clear: both;
+}
+
+.files-info {
+  background: #f0fdf4;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+.files-info h3 {
+  margin-top: 0;
+  color: #15803d;
+}
+
+.files-info ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.files-info li {
+  color: #166534;
+  margin: 5px 0;
+}
+
+.error-message {
+  color: #991b1b;
+  padding: 12px;
+  background: #fee2e2;
+  border-radius: 6px;
+  margin: 0;
+}
+
+.footer {
+  text-align: center;
+  color: white;
+  margin-top: 40px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+.footer code {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+@media (max-width: 768px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .header h1 {
+    font-size: 1.8em;
+  }
+
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+}
